@@ -21,6 +21,4 @@ const cli = meow(`
 	}
 });
 
-const fn = cli.flags.ipv4 ? 'v4' : (cli.flags.ipv6 ? 'v6' : 'v4');
-
-publicIp[fn]().then(console.log);
+publicIp[cli.flags.ipv6 ? 'v6' : 'v4']().then(console.log);
