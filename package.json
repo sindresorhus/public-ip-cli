@@ -38,12 +38,12 @@
   ],
   "dependencies": {
     "meow": "^3.7.0",
-    "public-ip": "^2.0.1"
+    "public-ip": "^2.1.0"
   },
   "devDependencies": {
     "ava": "*",
-    "execa": "^0.4.0",
-    "is-ip": "^1.0.0",
+    "execa": "^0.6.0",
+    "is-ip": "^2.0.0",
     "xo": "*"
   },
   "xo": {

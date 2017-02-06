@@ -15,12 +15,16 @@ $ npm install --global public-ip-cli
 ```
 $ public-ip --help
 
+  Get your public IP address
+
   Usage
-    $ public-ip
+     $ public-ip
 
   Options
-    -4, --ipv4  Return the IPv4 address (default)
-    -6, --ipv6  Return the IPv6 address
+    -4, --ipv4             Return the IPv4 address (default)
+    -6, --ipv6             Return the IPv6 address
+    -h, --https            Use HTTPS instead of DNS
+    -t, --timeout <msecs>  Timeout in milliseconds (default: 5000)
 
   Examples
     $ public-ip
@@ -35,6 +39,10 @@ real    0.08s
 user    0.05s
 sys     0.02s
 ```
+
+## Maintainers
+
+- [silverwind](https://github.com/silverwind)
 
 
 ## Related
