@@ -5,15 +5,15 @@ const publicIp = require('public-ip');
 
 const cli = meow(`
 	Usage
-	  $ public-ip [options]
+	  $ public-ip
 
 	Options
-	  -4, --ipv4             Return the IPv4 address (default)
-	  -6, --ipv6             Return the IPv6 address
-	  -h, --https            Use HTTPS instead of DNS
-	  -t, --timeout <msecs>  Timeout in milliseconds (default: 5000)
+	  -4, --ipv4          Return the IPv4 address (default)
+	  -6, --ipv6          Return the IPv6 address
+	  -h, --https         Use HTTPS instead of DNS
+	  -t, --timeout=<ms>  Timeout in milliseconds (default: 5000)
 
-	Examples
+	Example
 	  $ public-ip
 	  46.5.21.123
 `, {
