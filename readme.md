@@ -16,7 +16,7 @@ $ npm install --global public-ip-cli
 $ public-ip --help
 
   Usage
-    $ public-ip
+    $ public-ip [options]
 
   Options
     -4, --ipv4          Return the IPv4 address (default)
