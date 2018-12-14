@@ -16,13 +16,13 @@ $ npm install --global public-ip-cli
 $ public-ip --help
 
   Usage
-    $ public-ip [options]
+    $ public-ip
 
   Options
-    -4, --ipv4          Return the IPv4 address (default)
-    -6, --ipv6          Return the IPv6 address
-    -h, --https         Use HTTPS instead of DNS
-    -t, --timeout=<ms>  Timeout in milliseconds (default: 5000)
+    --ipv4, -4          Return the IPv4 address (default)
+    --ipv6, -6          Return the IPv6 address
+    --https, -h         Use HTTPS instead of DNS
+    --timeout=<ms>, -t  Timeout in milliseconds (default: 5000)
 
   Example
     $ public-ip

@@ -8,24 +8,40 @@ const cli = meow(`
 	  $ public-ip
 
 	Options
-	  -4, --ipv4          Return the IPv4 address (default)
-	  -6, --ipv6          Return the IPv6 address
-	  -h, --https         Use HTTPS instead of DNS
-	  -t, --timeout=<ms>  Timeout in milliseconds (default: 5000)
+	  --ipv4, -4          Return the IPv4 address (default)
+	  --ipv6, -6          Return the IPv6 address
+	  --https, -h         Use HTTPS instead of DNS
+	  --timeout=<ms>, -t  Timeout in milliseconds (default: 5000)
 
 	Example
 	  $ public-ip
 	  46.5.21.123
 `, {
-	alias: {
-		4: 'ipv4',
-		6: 'ipv6',
-		h: 'https',
-		t: 'timeout'
+	flags: {
+		ipv4: {
+			type: 'boolean',
+			alias: '4'
+		},
+		ipv6: {
+			type: 'boolean',
+			alias: '6'
+		},
+		https: {
+			type: 'boolean',
+			alias: 'h'
+		},
+		timeout: {
+			type: 'string',
+			alias: 't'
+		}
 	}
 });
 
-publicIp[cli.flags.ipv6 ? 'v6' : 'v4']({
-	https: cli.flags.https ? true : undefined,
-	timeout: typeof cli.flags.timeout === 'number' ? cli.flags.timeout : undefined
-}).then(console.log);
+(async () => {
+	const ip = await publicIp[cli.flags.ipv6 ? 'v6' : 'v4']({
+		https: cli.flags.https ? true : undefined,
+		timeout: typeof cli.flags.timeout !== 'undefined' && Number(cli.flags.timeout)
+	});
+
+	console.log(ip);
+})();

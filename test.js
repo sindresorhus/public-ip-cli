@@ -15,7 +15,7 @@ test('-4', async t => {
 });
 
 test('-4 -h -t 1', async t => {
-	t.throws(execa.stdout('./cli.js', ['-4', '-h', '-t', '1']));
+	await t.throws(execa.stdout('./cli.js', ['-4', '-h', '-t', '1']));
 });
 
 if (!process.env.CI) {
@@ -24,6 +24,6 @@ if (!process.env.CI) {
 	});
 
 	test('-6 -h -t 1', async t => {
-		t.throws(execa.stdout('./cli.js', ['-6', '-h', '-t', '1']));
+		await t.throws(execa.stdout('./cli.js', ['-6', '-h', '-t', '1']));
 	});
 }

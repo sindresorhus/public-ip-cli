@@ -1,49 +1,49 @@
 {
-  "name": "public-ip-cli",
-  "version": "1.1.2",
-  "description": "Get your public IP address",
-  "license": "MIT",
-  "repository": "sindresorhus/public-ip-cli",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "bin": {
-    "public-ip": "cli.js"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "cli.js"
-  ],
-  "keywords": [
-    "cli-app",
-    "cli",
-    "get",
-    "ip",
-    "ipv4",
-    "ipv6",
-    "address",
-    "external",
-    "public",
-    "machine",
-    "fast",
-    "opendns",
-    "dns"
-  ],
-  "dependencies": {
-    "meow": "^3.7.0",
-    "public-ip": "^2.3.1"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "execa": "^0.6.0",
-    "is-ip": "^2.0.0",
-    "xo": "*"
-  }
+	"name": "public-ip-cli",
+	"version": "1.1.2",
+	"description": "Get your public IP address",
+	"license": "MIT",
+	"repository": "sindresorhus/public-ip-cli",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"bin": {
+		"public-ip": "cli.js"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"cli.js"
+	],
+	"keywords": [
+		"cli-app",
+		"cli",
+		"get",
+		"ip",
+		"ipv4",
+		"ipv6",
+		"address",
+		"external",
+		"public",
+		"machine",
+		"fast",
+		"opendns",
+		"dns"
+	],
+	"dependencies": {
+		"meow": "^5.0.0",
+		"public-ip": "^3.0.0"
+	},
+	"devDependencies": {
+		"ava": "^0.25.0",
+		"execa": "^1.0.0",
+		"is-ip": "^2.0.0",
+		"xo": "^0.23.0"
+	}
 }
