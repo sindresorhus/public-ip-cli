@@ -1,4 +1,4 @@
-# public-ip-cli [![Build Status](https://travis-ci.org/sindresorhus/public-ip-cli.svg?branch=master)](https://travis-ci.org/sindresorhus/public-ip-cli)
+# public-ip-cli
 
 > Get your public IP address
 
