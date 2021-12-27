@@ -2,13 +2,11 @@
 
 > Get your public IP address
 
-
 ## Install
 
-```
+```sh
 $ npm install --global public-ip-cli
 ```
-
 
 ## Usage
 
@@ -38,17 +36,10 @@ user    0.05s
 sys     0.02s
 ```
 
-
 ## Maintainers
 
 - [silverwind](https://github.com/silverwind)
 
-
 ## Related
 
 - [public-ip](https://github.com/sindresorhus/public-ip) - API for this module
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)

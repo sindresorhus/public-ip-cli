@@ -1,29 +1,34 @@
+import process from 'node:process';
 import test from 'ava';
-import execa from 'execa';
+import {execa} from 'execa';
 import isIp from 'is-ip';
 
 test('no arguments', async t => {
-	t.true(isIp.v4(await execa.stdout('./cli.js')));
+	const {stdout} = await execa('./cli.js');
+	t.true(isIp.v4(stdout));
 });
 
 test('-h', async t => {
-	t.true(isIp.v4(await execa.stdout('./cli.js', ['-h'])));
+	const {stdout} = await execa('./cli.js', ['-h']);
+	t.true(isIp.v4(stdout));
 });
 
 test('-4', async t => {
-	t.true(isIp.v4(await execa.stdout('./cli.js', ['-4'])));
+	const {stdout} = await execa('./cli.js', ['-4']);
+	t.true(isIp.v4(stdout));
 });
 
 test('-4 -h -t 1', async t => {
-	await t.throws(execa.stdout('./cli.js', ['-4', '-h', '-t', '1']));
+	await t.throwsAsync(execa('./cli.js', ['-4', '-h', '-t', '1']));
 });
 
 if (!process.env.CI) {
 	test('-6', async t => {
-		t.true(isIp.v6(await execa.stdout('./cli.js', ['-6'])));
+		const {stdout} = await execa('./cli.js', ['-6']);
+		t.true(isIp.v6(stdout));
 	});
 
 	test('-6 -h -t 1', async t => {
-		await t.throws(execa.stdout('./cli.js', ['-6', '-h', '-t', '1']));
+		await t.throwsAsync(execa('./cli.js', ['-6', '-h', '-t', '1']));
 	});
 }

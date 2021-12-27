@@ -7,13 +7,14 @@
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"url": "https://sindresorhus.com"
 	},
+	"type": "module",
 	"bin": {
 		"public-ip": "cli.js"
 	},
 	"engines": {
-		"node": ">=8"
+		"node": "^14.13.1 || >=16.0.0"
 	},
 	"scripts": {
 		"test": "xo && ava"
@@ -37,13 +38,13 @@
 		"dns"
 	],
 	"dependencies": {
-		"meow": "^5.0.0",
-		"public-ip": "^3.0.0"
+		"meow": "^10.1.2",
+		"public-ip": "^5.0.0"
 	},
 	"devDependencies": {
-		"ava": "^0.25.0",
-		"execa": "^1.0.0",
-		"is-ip": "^2.0.0",
-		"xo": "^0.23.0"
+		"ava": "^3.15.0",
+		"execa": "^6.0.0",
+		"is-ip": "^3.1.0",
+		"xo": "^0.47.0"
 	}
 }

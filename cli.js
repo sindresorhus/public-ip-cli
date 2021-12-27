@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-'use strict';
-const meow = require('meow');
-const publicIp = require('public-ip');
+import meow from 'meow';
+import publicIp from 'public-ip';
 
 const cli = meow(`
 	Usage
@@ -17,31 +16,30 @@ const cli = meow(`
 	  $ public-ip
 	  46.5.21.123
 `, {
+	importMeta: import.meta,
 	flags: {
 		ipv4: {
 			type: 'boolean',
-			alias: '4'
+			alias: '4',
 		},
 		ipv6: {
 			type: 'boolean',
-			alias: '6'
+			alias: '6',
 		},
 		https: {
 			type: 'boolean',
-			alias: 'h'
+			alias: 'h',
 		},
 		timeout: {
 			type: 'string',
-			alias: 't'
-		}
-	}
+			alias: 't',
+		},
+	},
 });
 
-(async () => {
-	const ip = await publicIp[cli.flags.ipv6 ? 'v6' : 'v4']({
-		https: cli.flags.https ? true : undefined,
-		timeout: typeof cli.flags.timeout !== 'undefined' && Number(cli.flags.timeout)
-	});
+const ip = await publicIp[cli.flags.ipv6 ? 'v6' : 'v4']({
+	https: cli.flags.https ? true : undefined,
+	timeout: typeof cli.flags.timeout !== 'undefined' && Number(cli.flags.timeout),
+});
 
-	console.log(ip);
-})();
+console.log(ip);
